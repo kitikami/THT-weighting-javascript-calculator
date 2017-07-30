@@ -71,9 +71,6 @@ function brent(a,b,f,tol,max_iterations){
         ,xm = 0.5*(a+b)
         ,tol1 = tol*Math.abs(x)+eps
         ,tol2 = 2*tol1
-        ,phi = (Math.sqrt(5) - 1)/2
-	    ,Cphi = 1-phi
-	    ,eps=Math.pow(10,-15)
         ;
 
     for (i = 0; i < max_iterations; i++) {
