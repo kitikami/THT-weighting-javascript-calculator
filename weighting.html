@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+
+    <title>Weighting</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="optimize.js"></script>
+    <script type="text/javascript" src="weighting.js"></script>
+
+
+</head>
+</head>
+    <body>
+
+        <h2> Calculate Weighting for Past Data </h2>
+
+        <form id="parameters" method="post">
+
+            <input type ='text' name = 'variance_true' id='variance_true_input' required/>
+            <label> Variance in current talent levels </label>
+            <span id="variance_true_error" style="color:red;" hidden="true">This value must be greater than 0</span>
+            <br>
+
+            <input type ='text' name = 'variance_x' id='variance_x_input' required/>
+            <label> Overall variance in one day of results  </label>
+            <span id="variance_x_error" style="color:red;" hidden="true">Overall variance must be greater than the variance in talent</span>
+            <br>
+
+            <input type ='text' name = 'cor' id='cor_input' required/>
+            <label> Day-to-day correlation of true talent</label>
+            <span id="cor_error" style="color:red;" hidden="true">This value must be between 0 and 1</span>
+            <br>
+
+            <input type ='number' min='1' name = 'days' id='days_input' required/>
+            <label> Number of days (or other units of time) in your sample </label>
+            <br>
+
+            <input type= 'submit' />
+
+        </form>
+
+
+        <h3 style="margin-top:0.5em;margin-bottom:0.25em;font-size:1.17em;">decay factor:&nbsp <span id="weight"></span></h3>
+        <i>&nbsp&nbsp<span id="weight_formula" style="color:#5555ff;"></span></i>
+        <br>
+        <br>
+
+
+        <b> Estimate the regression constant (for binomial stats only) </b>
+
+        <form id="parameters_regr" method="post">
+
+            <input type ='text' name = 'u' id='u_input' required/>
+            <label> league average rate </label>
+            <span id="u_error" style="color:red;" hidden="true">Binomial stats must be between 0 and 1</span>
+            <br>
+
+            <input type ='number' min='1' name = 'size' id='size_input' required/>
+            <label> Number of observations per day in your sample </label>
+            <br>
+
+            <input type= 'submit' id='regression_submit' disabled="true"/>
+
+        </form>
+
+        <h3 style="margin-top:0.5em;margin-bottom:0em;font-size:1.17em;">regression constant:&nbsp <span id="regression_constant"></span></h3>
+        <br>
+
+
+    </body>
+</html>
