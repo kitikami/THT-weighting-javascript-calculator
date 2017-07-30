@@ -49,6 +49,11 @@ function optimize(f,lower,upper,tol,maximum,max_iterations) {
 
 
 function brent(a,b,f,tol,max_iterations){
+    var phi = (Math.sqrt(5) - 1)/2
+        ,Cphi = 1-phi
+        ,eps=Math.pow(10,-15)
+        ;
+    
     var e = 0
 //        ,d
 //       ,etemp
