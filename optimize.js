@@ -34,10 +34,10 @@ function optimize(f,lower,upper,tol,maximum,max_iterations) {
     }
 
     if(f(lower)) { lower_eps = 0; }
-    else { lower_eps = Math.pow(10,-15); }
+    else { lower_eps = Math.pow(10,-8); }
 
     if(f(upper)) { upper_eps = 0; }
-    else { upper_eps = Math.pow(10,-15); }
+    else { upper_eps = Math.pow(10,-8); }
 
 	lower = lower + lower_eps;
     upper = upper - upper_eps;
